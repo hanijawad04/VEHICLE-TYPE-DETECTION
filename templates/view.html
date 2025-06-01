@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Uploaded Images</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        h2 { color: #2c3e50; }
+        .image-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .image-box {
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+        }
+        img {
+            border-radius: 10px;
+            width: 200px;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+            margin-top: 20px;
+            display: inline-block;
+        }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h2>Uploaded Test Images</h2>
+    <div class="image-grid">
+        {% for image in images %}
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='uploads/' + image) }}">
+            <p>{{ image }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    <a href="/">⬅️ Back to Upload</a>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Vehicle Classifier</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f6f8fb;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        h2 {
+            color: #2c3e50;
+        }
+        .form-container {
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: inline-block;
+            width: 300px;
+        }
+        input[type="file"] {
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+        }
+        button, input[type="submit"] {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+        button:hover, input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+            margin-top: 20px;
+            display: inline-block;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .form-title {
+            margin-bottom: 10px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Vehicle Classifier</h2>
+
+    <div class="form-container">
+        <div class="form-title">Upload Image</div>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*" required>
+            <button type="submit">Upload and Predict</button>
+        </form>
+
+        <div class="form-title">Upload Video</div>
+        <form action="/upload_video" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept="video/mp4" required>
+            <input type="submit" value="Upload Video">
+        </form>
+    </div>
+
+    <br>
+    <a href="/view">📁 View Uploaded Images</a>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Detection Result</title>
+    <style>
+        body { font-family: Arial; text-align: center; background: #f4f4f4; }
+        img { border-radius: 10px; margin-top: 20px; }
+        ul { list-style-type: none; padding: 0; }
+    </style>
+</head>
+<body>
+    <h2>Detected Vehicles</h2>
+    <img src="{{ url_for('static', filename='results/' + filename) }}" width="500"><br>
+    <ul>
+        {% for label, conf, box in detections %}
+        <li>{{ label }} — {{ (conf * 100) | round(2) }}%</li>
+        {% endfor %}
+    </ul>
+    <a href="/">⬅ Back</a>
+</body>
+</html>

@@ -1,0 +1,28 @@
+# Ignore Python virtual environment folders
+.venv/
+vehicle_recog_env/
+
+# Ignore image folders and files
+processed_images/
+test_images/
+label/
+static/
+# Ignore video files
+*.mp4
+
+# Ignore YOLO model weights
+yolov8m.pt
+yolov8n.pt
+
+# Ignore dataset files
+dataset.npz
+
+# Python cache
+__pycache__/
+
+# Ignore log files (optional)
+*.log
+
+# Ignore system files (optional)
+.DS_Store
+Thumbs.db
